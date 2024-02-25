@@ -1,5 +1,6 @@
 # %%
 import pandas as pd
+import numpy as np
 
 # __/ Stars \__________
 in_fname = "https://github.com/astronexus/ATHYG-Database/raw/main/data/subsets/hyglike_from_athyg_v31.csv.gz"
@@ -8,7 +9,7 @@ usecols = ['ra', 'dec', 'hip', 'proper', 'bayer', 'spect', 'mag']
 out_fname_f = lambda v: f"hyglike_from_athyg_v31_for_{v}.parquet"
 
 versions = ['Planisphere', 'SkyChart']
-mag_limits = [4.2, 6.7]
+mag_limits = [6.7, 8.0]
 
 df = pd.read_csv(in_fname, compression='gzip', usecols=usecols)
 
